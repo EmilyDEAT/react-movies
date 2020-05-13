@@ -1,0 +1,20 @@
+.moviesListContainer {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 1% 2% ;
+}
+
+@media screen and (min-width: 450px) and (max-width: 770px) {
+  .moviesListContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .moviesListContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
