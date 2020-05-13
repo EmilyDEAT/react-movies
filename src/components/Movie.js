@@ -2,9 +2,10 @@ import React from 'react'
 
 import './Movie.css'
 
-const Movie = () => {
+const Movie = ({ movie }) => {
   return (
     <div className='movieContainer'>
+      <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
     </div>
   )
 }
