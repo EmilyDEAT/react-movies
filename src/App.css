@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'OpenSans-bold';
+  src: url("./fonts/OpenSans-Bold.ttf")
+}
+
+@font-face {
+  font-family: 'OpenSans-regular';
+  src: url("./fonts/OpenSans-Regular.ttf")
+}
+
+App {
+  font-family: 'OpenSans-regular', sans-serif;
+}
+
+h2, strong {
+  font-family: 'OpenSans-bold', sans-serif;;
+}
