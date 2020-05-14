@@ -29,6 +29,11 @@ const MoviesList = () => {
     setMovie(null)
   };
 
+  // Scroll Function
+  const getMoreMovie = () => {
+
+  }
+
   // Get Movies List from API
   const getMoviesList = async () => {
     const result = await axios.get(

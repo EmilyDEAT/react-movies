@@ -24,21 +24,7 @@ const MovieInfo = ({ hideInfo, movie, show }) => {
 
    // Rating convert
    const ratingConvert = (n) => {
-    if (n === 0) {
-      return 0
-    } else if (n <= 2) {
-      return 1
-    } else if (n <= 4) {
-      return 2
-    } else if (n <= 6) {
-      return 3
-    } else if (n <= 8) {
-      return 4
-    } else if (n <= 10) {
-      return 5
-    } else {
-      return 0
-    }
+    return Math.round(n/2)
   }
 
   return (
