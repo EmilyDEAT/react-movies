@@ -22,6 +22,25 @@ const MovieInfo = ({ hideInfo, movie, show }) => {
      return `${day}/${month}/${year}`
    }
 
+   // Rating convert
+   const ratingConvert = (n) => {
+    if (n === 0) {
+      return 0
+    } else if (n <= 2) {
+      return 1
+    } else if (n <= 4) {
+      return 2
+    } else if (n <= 6) {
+      return 3
+    } else if (n <= 8) {
+      return 4
+    } else if (n <= 10) {
+      return 5
+    } else {
+      return 0
+    }
+  }
+
   return (
     <div className={`movieInfoContainer ${show ? "show" : "hide"}`}>
       {movie === null ? (
@@ -41,7 +60,7 @@ const MovieInfo = ({ hideInfo, movie, show }) => {
           />
           <h2 className='movieInfoTitle'>{movie.title}</h2>
           <div className='movieInfoRating'>
-            <Rater total={10} rating={movie.vote_average} interactive={false} />
+            <Rater total={5} rating={ratingConvert(movie.vote_average)} interactive={false} />
             <p className='movieInfoVotes'>({movie.vote_count} Votes)</p>
           </div>
           <div className='movieInfoFacts'>
@@ -51,6 +70,7 @@ const MovieInfo = ({ hideInfo, movie, show }) => {
           </div>
           <strong className="movieInfoTagline">{movie.tagline}</strong>
           <p className="movieInfoOverview">{movie.overview}</p>
+          <a className="movieInfoSite" href={movie.homepage} target="_blank" rel="noopener noreferrer">Plus d'infos</a>
         </div>
       )}
     </div>
