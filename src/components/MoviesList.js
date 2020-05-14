@@ -31,17 +31,10 @@ const MoviesList = (props) => {
 
   // Get Movies List from API
   const getMoviesList = async () => {
-    if (genre === 0) {
       const result = await axios.get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&language=fr&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
-      );
-      setMoviesList(result.data.results);
-    } else {
-      const result = await axios.get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&language=fr&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genre}`
+        `https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&language=fr&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&${genre > 0 ? "with_genres=" + genre : ""}`
       );
       setMoviesList(result.data.results)
-    }
   };
 
   // Get Movie Genre
