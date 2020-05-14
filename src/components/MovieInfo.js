@@ -1,4 +1,5 @@
 import React from "react";
+import Rater from 'react-rater'
 
 import cross from "../images/cross.png";
 
@@ -39,6 +40,10 @@ const MovieInfo = ({ hideInfo, movie, show }) => {
             alt={movie.title}
           />
           <h2 className='movieInfoTitle'>{movie.title}</h2>
+          <div className='movieInfoRating'>
+            <Rater total={10} rating={movie.vote_average} interactive={false} />
+            <p className='movieInfoVotes'>({movie.vote_count} Votes)</p>
+          </div>
           <div className='movieInfoFacts'>
             <p className="movieInfoGenre">{movie.genres[0].name}</p>
             <p className="movieInfoTime">{timeConvert(movie.runtime)}</p>
