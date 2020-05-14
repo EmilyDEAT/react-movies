@@ -8,11 +8,11 @@ import "./MoviesList.css";
 
 const APIKey = "92b418e837b833be308bbfb1fb2aca1e";
 
-const MoviesList = () => {
+const MoviesList = (props) => {
   const [moviesList, setMoviesList] = useState([]);
   const [showMovieInfo, setShowMovieInfo] = useState(false);
   const [movie, setMovie] = useState(null)
-
+  const [genre, setGenre] = useState(null)
 
   // Functions for open and close modal for movie info
   const showInfo = async (e) => {
@@ -29,20 +29,42 @@ const MoviesList = () => {
     setMovie(null)
   };
 
-  // Scroll Function
-  const getMoreMovie = () => {
-
-  }
-
   // Get Movies List from API
   const getMoviesList = async () => {
-    const result = await axios.get(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${APIKey}&language=fr&page=1`
-    );
-    setMoviesList(result.data.results);
+    if (genre === 0) {
+      const result = await axios.get(
+        `https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&language=fr&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
+      );
+      setMoviesList(result.data.results);
+    } else {
+      const result = await axios.get(
+        `https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&language=fr&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genre}`
+      );
+      setMoviesList(result.data.results)
+    }
   };
 
-  useEffect(() => {getMoviesList()}, []);
+  // Get Movie Genre
+  const getGenre = (s) => {
+    let idGenre = 0
+    if (s === "action") {
+      idGenre = 28
+    } else if (s === "aventure") {
+      idGenre = 12
+    } else if (s === "comedie") {
+      idGenre = 35
+    } else if (s === "drame") {
+      idGenre = 18
+    } else if (s === "familial") {
+      idGenre = 10751
+    } else if (s === "fantastique") {
+      idGenre = 14
+    }
+    return idGenre
+  }
+
+  useEffect(() => {getMoviesList()}, [genre]);
+  useEffect(() => {setGenre(getGenre(props.match.params.genre))}, [props.match.params.genre]);
 
   return (
     <div className="moviesListContainer">

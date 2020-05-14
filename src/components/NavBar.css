@@ -1,0 +1,42 @@
+.navBar {
+  height: 12vh;
+  background-color: rgb(35,37,42);
+}
+
+.navBarContainer {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navBarLogo {
+  height: 12vh;
+}
+
+.navBarLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navBarLinks li {
+  margin-left: 3vw;
+  cursor: pointer;
+  list-style-type: none;
+}
+
+.navBarLinks .active {
+  color: #EC0451;
+}
+
+.navBarLinks a {
+  color:white;
+  text-decoration: none;
+}
+
+.navBarLinks a:hover {
+  color: #EC0451;
+}
+
