@@ -15,3 +15,19 @@ App {
 h2, strong {
   font-family: 'OpenSans-bold', sans-serif;;
 }
+
+.loader {
+  height: 100px;
+  width: 100px;
+  border: 8px solid rgb(158, 161, 169);
+  border-right-color: #EC0451;
+  border-radius: 100%;
+  animation: rotate 1s infinite linear;
+  margin: 25vw auto auto auto;
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}

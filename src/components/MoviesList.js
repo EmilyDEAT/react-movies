@@ -9,12 +9,12 @@ import "./MoviesList.css";
 const APIKey = "92b418e837b833be308bbfb1fb2aca1e";
 
 const MoviesList = (props) => {
-  const [moviesList, setMoviesList] = useState([]);
+  const [moviesList, setMoviesList] = useState(null);
   const [showMovieInfo, setShowMovieInfo] = useState(false);
   const [movie, setMovie] = useState(null)
   const [genre, setGenre] = useState(null)
 
-  // Functions for open and close modal for movie info
+  // Function to open modal for movie info
   const showInfo = async (e) => {
     setShowMovieInfo(true);
       // Get Movie Info from API
@@ -23,7 +23,7 @@ const MoviesList = (props) => {
     )
     setMovie(result.data)
   };
-
+ // Function to close modal for movie info
   const hideInfo = () => {
     setShowMovieInfo(false);
     setMovie(null)
@@ -31,6 +31,7 @@ const MoviesList = (props) => {
 
   // Get Movies List from API
   const getMoviesList = async () => {
+      setMoviesList(null)
       const result = await axios.get(
         `https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&language=fr&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&${genre > 0 ? "with_genres=" + genre : ""}`
       );
@@ -59,7 +60,7 @@ const MoviesList = (props) => {
   useEffect(() => {getMoviesList()}, [genre]);
   useEffect(() => {setGenre(getGenre(props.match.params.genre))}, [props.match.params.genre]);
 
-  return (
+  return moviesList === null ? <div className='loader'></div> : (
     <div className="moviesListContainer">
       {moviesList.map((movie) => (
         <Movie 

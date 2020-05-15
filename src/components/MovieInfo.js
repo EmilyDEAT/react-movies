@@ -30,7 +30,7 @@ const MovieInfo = ({ hideInfo, movie, show }) => {
   return (
     <div className={`movieInfoContainer ${show ? "show" : "hide"}`}>
       {movie === null ? (
-        "Loading"
+        <div className='loader'></div>
       ) : (
         <div className="movieInfo">
           <img
