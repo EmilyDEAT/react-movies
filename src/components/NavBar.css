@@ -19,6 +19,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 0;
+  background-color: rgb(35,37,42);
+  font-family: 'OpenSans-bold';
+  font-size: 1.2vw;
 }
 
 .navBarLinks li {
@@ -38,5 +42,52 @@
 
 .navBarLinks a:hover {
   color: #EC0451;
+}
+
+.navBarClose {
+  width: 25px;
+  margin: auto auto auto 3vw;
+  cursor: pointer;
+  transition: transform 300ms ease-out;
+  display: none;
+}
+.navBarMenu {
+  width: 25px;
+  margin: auto 0 auto auto;
+  cursor: pointer;
+  transition: transform 300ms ease-out;
+  display: none;
+}
+
+.navBarClose:hover, .navBarMenu:hover  {
+  transform: scale(1.3);
+}
+
+@media screen and (max-width: 770px) {
+  .burgerMenu {
+    display: none;
+  }
+
+  .navBarLinks {
+    flex-direction: column;
+    font-size: 2vh;
+    z-index: 1;
+    height: 70vh;
+    top: 0;
+    position: absolute;
+    right: 0;
+    width: 200px;
+    align-items: flex-end;
+    margin: 0;
+  }
+
+  .navBarLinks li {
+    margin: auto 3vw auto 0
+  }
+
+  .navBarClose, .navBarMenu  {
+    display: block;
+  }
+
 }
 
