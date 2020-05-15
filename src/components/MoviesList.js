@@ -11,65 +11,91 @@ const APIKey = "92b418e837b833be308bbfb1fb2aca1e";
 const MoviesList = (props) => {
   const [moviesList, setMoviesList] = useState(null);
   const [showMovieInfo, setShowMovieInfo] = useState(false);
-  const [movie, setMovie] = useState(null)
-  const [genre, setGenre] = useState(null)
+  const [movie, setMovie] = useState(null);
+  const [genre, setGenre] = useState(null);
+  const [favoritesList, setFavoritesList] = useState({});
+  const [isFavorite, setIsFavorite] = useState(false)
 
   // Function to open modal for movie info
   const showInfo = async (e) => {
     setShowMovieInfo(true);
-      // Get Movie Info from API
+    // Test is favorite
+    if (favoritesList[e.target.id] !== undefined) {
+      setIsFavorite(true)
+    }
+    // Get Movie Info from API
     const result = await axios.get(
       `https://api.themoviedb.org/3/movie/${e.target.id}?api_key=${APIKey}&language=fr`
-    )
-    setMovie(result.data)
+    );
+    setMovie(result.data);
+
   };
- // Function to close modal for movie info
+  // Function to close modal for movie info
   const hideInfo = () => {
     setShowMovieInfo(false);
-    setMovie(null)
+    setMovie(null);
+    setIsFavorite(false)
   };
+
+  // Add a movie in my list
+  const addFavorite = () => {
+    setFavoritesList({...favoritesList, [movie.id]: movie })
+    setIsFavorite(true)
+  }
 
   // Get Movies List from API
   const getMoviesList = async () => {
-      setMoviesList(null)
-      const result = await axios.get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&language=fr&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&${genre > 0 ? "with_genres=" + genre : ""}`
-      );
-      setMoviesList(result.data.results)
+    setMoviesList(null);
+    const result = await axios.get(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${APIKey}&language=fr&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&${
+        genre > 0 ? "with_genres=" + genre : ""
+      }`
+    );
+    setMoviesList(result.data.results);
   };
 
   // Get Movie Genre
   const getGenre = (s) => {
-    let idGenre = 0
+    let idGenre = 0;
     if (s === "action") {
-      idGenre = 28
+      idGenre = 28;
     } else if (s === "aventure") {
-      idGenre = 12
+      idGenre = 12;
     } else if (s === "comedie") {
-      idGenre = 35
+      idGenre = 35;
     } else if (s === "drame") {
-      idGenre = 18
+      idGenre = 18;
     } else if (s === "familial") {
-      idGenre = 10751
+      idGenre = 10751;
     } else if (s === "fantastique") {
-      idGenre = 14
+      idGenre = 14;
     }
-    return idGenre
-  }
+    return idGenre;
+  };
 
-  useEffect(() => {getMoviesList()}, [genre]);
-  useEffect(() => {setGenre(getGenre(props.match.params.genre))}, [props.match.params.genre]);
+  useEffect(() => {
+    getMoviesList();
+  }, [genre]);
+  useEffect(() => {
+    setGenre(getGenre(props.match.params.genre));
+  }, [props.match.params.genre]);
 
-  return moviesList === null ? <div className='loader'></div> : (
+  return moviesList === null ? (
+    <div className="loader"></div>
+  ) : (
     <div className="moviesListContainer">
-      {moviesList.map((movie) => (
-        <Movie 
-        movie={movie} 
-        key={movie.id} 
-        showInfo={showInfo} 
-        />
-      ))}
-      <MovieInfo movie={movie} hideInfo={hideInfo} show={showMovieInfo}/>
+      {props.match.params.genre !== "favoris" ? (
+        moviesList.map(movie => (
+          <Movie movie={movie} key={movie.id} showInfo={showInfo} />
+        ))
+      ) : Object.keys(favoritesList).length === 0 ? (
+        <h2 className='noFavorite'>Il n'y a aucun film dans votre liste</h2>
+      ) : (
+        Object.keys(favoritesList).map(movieId => (
+          <Movie movie={favoritesList[movieId]} key={movieId} showInfo={showInfo} />
+        ))
+      )}
+      <MovieInfo movie={movie} hideInfo={hideInfo} show={showMovieInfo} add={addFavorite} isFavorite={isFavorite}/>
     </div>
   );
 };

@@ -1,11 +1,12 @@
 import React from "react";
 import Rater from 'react-rater'
 
+import { ReactComponent as Heart } from '../images/heart.svg'
 import cross from "../images/cross.png";
 
 import "./MovieInfo.css";
 
-const MovieInfo = ({ hideInfo, movie, show }) => {
+const MovieInfo = ({ hideInfo, movie, show, add, isFavorite }) => {
   // Time convert
   const timeConvert = (n) => {
     const hours = Math.floor(n / 60);
@@ -44,7 +45,10 @@ const MovieInfo = ({ hideInfo, movie, show }) => {
             src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
             alt={movie.title}
           />
+          <div className='movieInfoTitleContainer'>
           <h2 className='movieInfoTitle'>{movie.title}</h2>
+          <Heart className={`heart ${isFavorite ? "red" : ""}`} onClick={add}/>
+          </div>
           <div className='movieInfoRating'>
             <Rater total={5} rating={ratingConvert(movie.vote_average)} interactive={false} />
             <p className='movieInfoVotes'>({movie.vote_count} Votes)</p>

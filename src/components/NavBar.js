@@ -62,6 +62,11 @@ const NavBar = () => {
               Fantastique
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/favoris" activeClassName="active">
+              Ma liste
+            </NavLink>
+          </li>
         </ul>
       </div>
     </nav>

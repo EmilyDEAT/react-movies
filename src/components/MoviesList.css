@@ -9,6 +9,11 @@
   grid-gap: 2% 3% ;
 }
 
+.noFavorite {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
 @media screen and (min-width: 450px) and (max-width: 770px) {
   .moviesListContainer {
     grid-template-columns: repeat(4, 1fr);

@@ -44,9 +44,30 @@
   width: 100%;
 }
 
+.movieInfoTitleContainer {
+display: flex;
+flex-direction: row;
+align-items: baseline;
+justify-content: space-between;
+}
+
 .movieInfoTitle {
   margin-bottom: 16px;
   font-size: 2em;
+}
+
+.heart {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.heart path:hover {
+  fill: #EC0451;
+}
+
+.red path {
+  fill: #EC0451;
 }
 
 .react-rater {
