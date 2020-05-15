@@ -23,7 +23,7 @@ const NavBar = () => {
   return (
     <nav className="navBar">
       <div className="navBarContainer">
-        <img className="navBarLogo" src={logo} alt="Films Inspiration" />
+        <NavLink to="/"><img className="navBarLogo" src={logo} alt="Films Inspiration" /></NavLink>
         <img className="navBarMenu" src={menu} alt="burger menu" onClick={openMenu}/>
         <ul className={`navBarLinks ${burgerMenu ? "burgerMenuShow" : "burgerMenuHide"}`}>
           <img className="navBarClose" src={cross} alt="close" onClick={closeMenu} />
