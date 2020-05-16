@@ -29,11 +29,11 @@ const MovieInfo = ({ hideInfo, movie, show, add, isFavorite }) => {
   }
 
   return (
-    <div className={`movieInfoContainer ${show ? "show" : "hide"}`}>
+    <div className={`movieInfoContainer ${show ? "show" : "hide"}`} onClick={hideInfo}>
       {movie === null ? (
         <div className='loader'></div>
       ) : (
-        <div className="movieInfo">
+        <div className="movieInfo" onClick={(e) => e.stopPropagation()}>
           <img
             className="movieInfoClose"
             src={cross}
