@@ -37,10 +37,17 @@ const MoviesList = (props) => {
     setIsFavorite(false)
   };
 
-  // Add a movie in my list
+  // Add or remove a movie in my list
   const addFavorite = () => {
-    setFavoritesList({...favoritesList, [movie.id]: movie })
-    setIsFavorite(true)
+    if (favoritesList[movie.id] === undefined) {
+      setFavoritesList({...favoritesList, [movie.id]: movie })
+      setIsFavorite(true)
+    } else {
+      setIsFavorite(false)
+      const favoritesListTmp = {...favoritesList}
+      delete favoritesListTmp[movie.id]
+      setFavoritesList(favoritesListTmp)
+    }
   }
 
   // Get Movies List from API
