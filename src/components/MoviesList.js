@@ -80,12 +80,8 @@ const MoviesList = (props) => {
     return idGenre;
   };
 
-  useEffect(() => {
-    getMoviesList();
-  }, [genre]);
-  useEffect(() => {
-    setGenre(getGenre(props.match.params.genre));
-  }, [props.match.params.genre]);
+  useEffect(() => {getMoviesList();}, [genre]);
+  useEffect(() => {setGenre(getGenre(props.match.params.genre));}, [props.match.params.genre]);
 
   return moviesList === null ? (
     <div className="loader"></div>
