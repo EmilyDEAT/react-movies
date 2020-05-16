@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/react-movies/static/css/main.511a5f4a.chunk.css",
+    "main.js": "/react-movies/static/js/main.d89a14df.chunk.js",
+    "main.js.map": "/react-movies/static/js/main.d89a14df.chunk.js.map",
+    "runtime-main.js": "/react-movies/static/js/runtime-main.347e15d7.js",
+    "runtime-main.js.map": "/react-movies/static/js/runtime-main.347e15d7.js.map",
+    "static/js/2.d07ebacf.chunk.js": "/react-movies/static/js/2.d07ebacf.chunk.js",
+    "static/js/2.d07ebacf.chunk.js.map": "/react-movies/static/js/2.d07ebacf.chunk.js.map",
+    "index.html": "/react-movies/index.html",
+    "precache-manifest.a5895b0715844a1f9c7a96b9934936e1.js": "/react-movies/precache-manifest.a5895b0715844a1f9c7a96b9934936e1.js",
+    "service-worker.js": "/react-movies/service-worker.js",
+    "static/css/main.511a5f4a.chunk.css.map": "/react-movies/static/css/main.511a5f4a.chunk.css.map",
+    "static/js/2.d07ebacf.chunk.js.LICENSE.txt": "/react-movies/static/js/2.d07ebacf.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/react-movies/static/media/OpenSans-Regular.3ed9575d.ttf",
+    "static/media/heart.31782b07.svg": "/react-movies/static/media/heart.31782b07.svg",
+    "static/media/logo.png": "/react-movies/static/media/logo.522368bf.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.347e15d7.js",
+    "static/js/2.d07ebacf.chunk.js",
+    "static/css/main.511a5f4a.chunk.css",
+    "static/js/main.d89a14df.chunk.js"
+  ]
+}
