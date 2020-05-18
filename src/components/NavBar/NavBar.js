@@ -34,7 +34,7 @@ const NavBar = () => {
         />
         <ul
           className={`navBarLinks ${
-            burgerMenu ? "" : "burgerMenuHide"
+            burgerMenu ? "burgerMenuShow" : "burgerMenuHide"
           }`}
         >
           <img
