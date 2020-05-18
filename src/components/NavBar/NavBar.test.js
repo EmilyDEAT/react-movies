@@ -2,15 +2,15 @@ import React from "react";
 import renderer from "react-test-renderer";
 import { HashRouter } from "react-router-dom";
 
-import App from "./App";
+import NavBar from "./NavBar";
 
-it("App renders correctly", () => {
-  const app = renderer
+it("NavBar renders correctly", () => {
+  const navBar = renderer
     .create(
       <HashRouter>
-        <App />
+        <NavBar />
       </HashRouter>
     )
     .toJSON();
-  expect(app).toMatchSnapshot();
+  expect(navBar).toMatchSnapshot();
 });

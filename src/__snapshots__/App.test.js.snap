@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders correctly 1`] = `
+<div
+  className="App"
+>
+  <nav
+    className="navBar"
+  >
+    <div
+      className="navBarContainer"
+    >
+      <a
+        aria-current="page"
+        className="active"
+        href="#/"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        <img
+          alt="Films Inspiration"
+          className="navBarLogo"
+          src="logo.png"
+        />
+      </a>
+      <img
+        alt="burger menu"
+        className="navBarMenu"
+        onClick={[Function]}
+        src="menu.png"
+      />
+      <ul
+        className="navBarLinks burgerMenuHide"
+      >
+        <img
+          alt="close"
+          className="navBarClose"
+          onClick={[Function]}
+          src="cross.png"
+        />
+        <li>
+          <a
+            aria-current="page"
+            className="active"
+            href="#/populaire"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            Populaire
+          </a>
+        </li>
+        <li>
+          <a
+            aria-current={null}
+            href="#/action"
+            onClick={[Function]}
+          >
+            Action
+          </a>
+        </li>
+        <li>
+          <a
+            aria-current={null}
+            href="#/aventure"
+            onClick={[Function]}
+          >
+            Aventure
+          </a>
+        </li>
+        <li>
+          <a
+            aria-current={null}
+            href="#/comedie"
+            onClick={[Function]}
+          >
+            Comédie
+          </a>
+        </li>
+        <li>
+          <a
+            aria-current={null}
+            href="#/drame"
+            onClick={[Function]}
+          >
+            Drame
+          </a>
+        </li>
+        <li>
+          <a
+            aria-current={null}
+            href="#/familial"
+            onClick={[Function]}
+          >
+            Familial
+          </a>
+        </li>
+        <li>
+          <a
+            aria-current={null}
+            href="#/fantastique"
+            onClick={[Function]}
+          >
+            Fantastique
+          </a>
+        </li>
+        <li>
+          <a
+            aria-current={null}
+            href="#/favoris"
+            onClick={[Function]}
+          >
+            Ma liste
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div
+    className="loader"
+  />
+</div>
+`;

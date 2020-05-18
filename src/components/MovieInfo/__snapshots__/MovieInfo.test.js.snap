@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieInfo renders correctly 1`] = `
+<div
+  className="movieInfoContainer show"
+  onClick={[Function]}
+>
+  <div
+    className="movieInfo"
+    onClick={[Function]}
+  >
+    <img
+      alt="close"
+      className="movieInfoClose"
+      onClick={[Function]}
+      src="cross.png"
+    />
+    <img
+      alt=""
+      className="movieInfoImg"
+      src="https://image.tmdb.org/t/p/w500"
+    />
+    <div
+      className="movieInfoTitleContainer"
+    >
+      <h2
+        className="movieInfoTitle"
+      >
+        
+      </h2>
+      <svg
+        className="heart red"
+        onClick={[Function]}
+      >
+        heart.svg
+      </svg>
+    </div>
+    <div
+      className="movieInfoRating"
+    >
+      <div
+        className="react-rater"
+      >
+        <div
+          onClick={null}
+          onMouseOver={null}
+        >
+          <div
+            className="react-rater-star is-disabled is-active"
+          >
+            ★
+          </div>
+        </div>
+        <div
+          onClick={null}
+          onMouseOver={null}
+        >
+          <div
+            className="react-rater-star is-disabled"
+          >
+            ★
+          </div>
+        </div>
+        <div
+          onClick={null}
+          onMouseOver={null}
+        >
+          <div
+            className="react-rater-star is-disabled"
+          >
+            ★
+          </div>
+        </div>
+        <div
+          onClick={null}
+          onMouseOver={null}
+        >
+          <div
+            className="react-rater-star is-disabled"
+          >
+            ★
+          </div>
+        </div>
+        <div
+          onClick={null}
+          onMouseOver={null}
+        >
+          <div
+            className="react-rater-star is-disabled"
+          >
+            ★
+          </div>
+        </div>
+      </div>
+      <p
+        className="movieInfoVotes"
+      >
+        (
+        1
+         Votes)
+      </p>
+    </div>
+    <div
+      className="movieInfoFacts"
+    >
+      <p
+        className="movieInfoGenre"
+      >
+        
+      </p>
+      <p
+        className="movieInfoTime"
+      >
+        1h40
+      </p>
+      <p
+        className="movieInfoDate"
+      >
+        Sortie le 
+        NaN/NaN/NaN
+      </p>
+    </div>
+    <strong
+      className="movieInfoTagline"
+    >
+      
+    </strong>
+    <p
+      className="movieInfoOverview"
+    >
+      
+    </p>
+    <a
+      className="movieInfoSite"
+      href=""
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Plus d'infos
+    </a>
+  </div>
+</div>
+`;

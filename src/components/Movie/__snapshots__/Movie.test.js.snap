@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie renders correctly 1`] = `
+<div
+  className="movieContainer"
+>
+  <img
+    alt=""
+    className="movieImg"
+    id={1}
+    onClick={[Function]}
+    src="https://image.tmdb.org/t/p/w500"
+  />
+</div>
+`;

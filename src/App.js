@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 
-import MoviesList from "./components/MoviesList";
-import NavBar from "./components/NavBar";
+import MoviesList from "./components/MoviesList/MoviesList";
+import NavBar from "./components/NavBar/NavBar";
 
 import "./App.css";
 

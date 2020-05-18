@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-import cross from "../images/cross.png";
-import logo from "../images/logo.png";
-import menu from "../images/menu.png";
+import cross from "../../images/cross.png";
+import logo from "../../images/logo.png";
+import menu from "../../images/menu.png";
 
 import "./NavBar.css";
 
@@ -12,21 +12,37 @@ const NavBar = () => {
 
   // Function open menu burger
   const openMenu = () => {
-    setBurgerMenu(true)
-  }
+    setBurgerMenu(true);
+  };
 
   // Function close menu burger
   const closeMenu = () => {
-    setBurgerMenu(false)
-  }
+    setBurgerMenu(false);
+  };
 
   return (
     <nav className="navBar">
       <div className="navBarContainer">
-        <NavLink to="/"><img className="navBarLogo" src={logo} alt="Films Inspiration" /></NavLink>
-        <img className="navBarMenu" src={menu} alt="burger menu" onClick={openMenu}/>
-        <ul className={`navBarLinks ${burgerMenu ? "burgerMenuShow" : "burgerMenuHide"}`}>
-          <img className="navBarClose" src={cross} alt="close" onClick={closeMenu} />
+        <NavLink to="/">
+          <img className="navBarLogo" src={logo} alt="Films Inspiration" />
+        </NavLink>
+        <img
+          className="navBarMenu"
+          src={menu}
+          alt="burger menu"
+          onClick={openMenu}
+        />
+        <ul
+          className={`navBarLinks ${
+            burgerMenu ? "burgerMenuShow" : "burgerMenuHide"
+          }`}
+        >
+          <img
+            className="navBarClose"
+            src={cross}
+            alt="close"
+            onClick={closeMenu}
+          />
           <li>
             <NavLink to="/populaire" activeClassName="active">
               Populaire
