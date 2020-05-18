@@ -1,12 +1,10 @@
 .moviesListContainer {
   width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5vh;
+  margin: 5vh auto 5vh auto;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
-  grid-gap: 2% 3% ;
+  grid-gap: 3vh;
 }
 
 .noFavorite {

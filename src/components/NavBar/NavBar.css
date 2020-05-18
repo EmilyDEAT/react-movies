@@ -71,10 +71,7 @@
 
 @media screen and (max-width: 770px) {
   .burgerMenuHide {
-    left: 100vw;
-  }
-  .burgerMenuShow {
-    left: calc(100vw - 200px);
+    display: none;
   }
 
   .navBarLinks {
@@ -87,7 +84,6 @@
     width: 200px;
     align-items: flex-end;
     margin: 0;
-    transition: left 250ms ease-in;
   }
 
   .navBarLinks li {
