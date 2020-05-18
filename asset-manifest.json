@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-movies/static/css/main.5fb04009.chunk.css",
+    "main.css": "/react-movies/static/css/main.941c5adc.chunk.css",
     "main.js": "/react-movies/static/js/main.8f3ea299.chunk.js",
     "main.js.map": "/react-movies/static/js/main.8f3ea299.chunk.js.map",
     "runtime-main.js": "/react-movies/static/js/runtime-main.347e15d7.js",
@@ -8,9 +8,9 @@
     "static/js/2.e1a7d175.chunk.js": "/react-movies/static/js/2.e1a7d175.chunk.js",
     "static/js/2.e1a7d175.chunk.js.map": "/react-movies/static/js/2.e1a7d175.chunk.js.map",
     "index.html": "/react-movies/index.html",
-    "precache-manifest.918b23962cc1168009569f09c11c5262.js": "/react-movies/precache-manifest.918b23962cc1168009569f09c11c5262.js",
+    "precache-manifest.de72ddc76e42f3f8736627176106a471.js": "/react-movies/precache-manifest.de72ddc76e42f3f8736627176106a471.js",
     "service-worker.js": "/react-movies/service-worker.js",
-    "static/css/main.5fb04009.chunk.css.map": "/react-movies/static/css/main.5fb04009.chunk.css.map",
+    "static/css/main.941c5adc.chunk.css.map": "/react-movies/static/css/main.941c5adc.chunk.css.map",
     "static/js/2.e1a7d175.chunk.js.LICENSE.txt": "/react-movies/static/js/2.e1a7d175.chunk.js.LICENSE.txt",
     "static/media/App.css": "/react-movies/static/media/OpenSans-Regular.3ed9575d.ttf",
     "static/media/heart.31782b07.svg": "/react-movies/static/media/heart.31782b07.svg",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.347e15d7.js",
     "static/js/2.e1a7d175.chunk.js",
-    "static/css/main.5fb04009.chunk.css",
+    "static/css/main.941c5adc.chunk.css",
     "static/js/main.8f3ea299.chunk.js"
   ]
 }
