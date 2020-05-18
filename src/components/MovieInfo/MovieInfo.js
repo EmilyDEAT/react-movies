@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Rater from "react-rater";
 
 import { timeConvert, dateConvert, ratingConvert } from "./utils";
@@ -9,6 +9,16 @@ import cross from "../../images/cross.png";
 import "./MovieInfo.css";
 
 const MovieInfo = ({ hideInfo, movie, show, add, isFavorite }) => {
+  const [loaded, setLoaded] = useState(false);
+
+  const handleImgLoaded = () => {
+    setLoaded(true);
+  };
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [movie]);
+
   return (
     <div
       className={`movieInfoContainer ${show ? "show" : "hide"}`}
@@ -24,10 +34,12 @@ const MovieInfo = ({ hideInfo, movie, show, add, isFavorite }) => {
             onClick={hideInfo}
             alt="close"
           />
+          {loaded ? null : <div className="movieInfoPlaceholder"></div>}
           <img
-            className="movieInfoImg"
+            className={loaded ? "movieInfoImg" : "movieInfoImgHidden"}
             src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
             alt={movie.title}
+            onLoad={handleImgLoaded}
           />
           <div className="movieInfoTitleContainer">
             <h2 className="movieInfoTitle">{movie.title}</h2>

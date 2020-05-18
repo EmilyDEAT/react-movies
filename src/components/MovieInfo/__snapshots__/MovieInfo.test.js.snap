@@ -15,9 +15,13 @@ exports[`MovieInfo renders correctly 1`] = `
       onClick={[Function]}
       src="cross.png"
     />
+    <div
+      className="movieInfoPlaceholder"
+    />
     <img
       alt=""
-      className="movieInfoImg"
+      className="movieInfoImgHidden"
+      onLoad={[Function]}
       src="https://image.tmdb.org/t/p/w500"
     />
     <div

@@ -4,11 +4,15 @@ exports[`Movie renders correctly 1`] = `
 <div
   className="movieContainer"
 >
+  <div
+    className="movieContainerPlaceholder"
+  />
   <img
     alt=""
-    className="movieImg"
+    className="movieImgHidden"
     id={1}
     onClick={[Function]}
+    onLoad={[Function]}
     src="https://image.tmdb.org/t/p/w500"
   />
 </div>

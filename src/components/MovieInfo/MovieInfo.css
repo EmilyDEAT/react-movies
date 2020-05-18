@@ -27,6 +27,26 @@
 .show {
   display: flex;
 }
+.movieInfoPlaceholder {
+  background-color: rgb(158, 161, 169);
+  width: 100%;
+  padding-top: 56.2%;
+  animation: pulseDark 5s infinite;
+}
+
+@keyframes pulseDark {
+  0% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0.4;
+  }
+}
 
 .movieInfoClose {
   width: 25px;
@@ -42,6 +62,10 @@
 
 .movieInfoImg {
   width: 100%;
+}
+
+.movieInfoImgHidden {
+  display: none;
 }
 
 .movieInfoTitleContainer {
